@@ -1,7 +1,8 @@
 import "./App.css";
+import Header from "./pages/index";
 
 function App() {
-  return <div className="App">console.log("start")</div>;
+  return <Header />;
 }
 
 export default App;
