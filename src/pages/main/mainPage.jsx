@@ -1,18 +1,21 @@
-import { Component } from "react";
-import style from "./main.module";
+import style from "./mainPage.module.scss";
 import * as IMG from "../../images/logo.jpg";
 
-class Header extends Component {
-  render() {
-    return (
-      <div>
-        console.log(IMG)
-        <a href="/">
-          <img className={style.img} src={IMG} alt="logo" />
-        </a>
-      </div>
-    );
-  }
-}
+console.log(IMG);
+
+const Header = () => {
+  return (
+    <div>
+      <a href="./mainPage.jsx">
+        <img
+          className={style.imgLogo}
+          src={IMG.default}
+          alt="logo"
+          width={200}
+        />
+      </a>
+    </div>
+  );
+};
 
 export default Header;
