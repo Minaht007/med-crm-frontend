@@ -7,7 +7,9 @@ class HeaderNav extends Component {
       <>
         <ul className={style.navTitle}>
           <li className={style.navList}>
-            <a href="/">Записатися</a>
+            <a className={style.navLink} href="/">
+              Записатися
+            </a>
           </li>
           <li className={style.navList}>
             <a href="/about">Лікарі</a>
