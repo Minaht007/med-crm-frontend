@@ -1,11 +1,4 @@
 import { Component } from "react";
-// import { state, useState } from "react";
-
-// const RegForm = ({ props }) => {
-//   const [name, setName] = useState(0);
-//   const [email, setEmail] = useState(0);
-//   const [phone, setPhone] = useState(0);
-// };
 
 const INITIAL_STATE = {
   login: "",
