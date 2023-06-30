@@ -1,0 +1,94 @@
+@import "../../Style/common";
+@media screen and (min-width: 300px) {
+  .container {
+    width: 100;
+  }
+  .form {
+    display: flex;
+    flex-direction: column;
+    max-width: 70%;
+    margin: auto;
+  }
+  .lableName {
+    padding-bottom: 4px;
+  }
+  .dataInput {
+    height: 30px;
+    width: 80%;
+    border-radius: 6px;
+  }
+  .dataInput:not(:last-child) {
+    margin-bottom: 20px;
+  }
+  .submitBtm {
+    display: block;
+    max-width: 40%;
+    padding: 10px 20px;
+    border-radius: 6px;
+    border: none;
+  }
+}
+
+@media screen and (min-width: 780px) {
+  .container {
+    width: 100;
+  }
+  .form {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    width: 70%;
+    max-width: 500px;
+    margin: auto;
+  }
+  .lableName {
+    padding-bottom: 4px;
+  }
+  .dataInput {
+    height: 30px;
+    width: 80%;
+    border-radius: 6px;
+  }
+  .dataInput:not(:last-child) {
+    margin-bottom: 30px;
+  }
+  .submitBtm {
+    display: block;
+    max-width: 40%;
+    padding: 10px 20px;
+    border-radius: 6px;
+    border: none;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .container {
+    width: 100;
+  }
+  .form {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    width: 70%;
+    max-width: 800px;
+    margin: auto;
+  }
+  .lableName {
+    padding-bottom: 4px;
+  }
+  .dataInput {
+    height: 40px;
+    width: 80%;
+    border-radius: 6px;
+  }
+  .dataInput:not(:last-child) {
+    margin-bottom: 40px;
+  }
+  .submitBtm {
+    display: block;
+    max-width: 40%;
+    padding: 10px 20px;
+    border-radius: 6px;
+    border: none;
+  }
+}

@@ -1,4 +1,5 @@
 import { Component } from "react";
+import styles from "./_SignUpForm.module.scss";
 
 const INITIAL_STATE = {
   login: "",
@@ -7,7 +8,7 @@ const INITIAL_STATE = {
   email: "",
 };
 
-class SignUpForm extends Component() {
+class SignUpForm extends Component {
   state = { INITIAL_STATE };
 
   handleChange = (evt) => {
@@ -29,52 +30,54 @@ class SignUpForm extends Component() {
   render() {
     const { login, email, pass, phone } = this.state;
     return (
-      <form>
-        <form onSubmit={this.handleSubmit}>
-          <label>
-            Name
-            <input
-              type="text"
-              placeholder="Enter login"
-              name="login"
-              value={login}
-              onChange={this.handleChange}
-            />
-          </label>
-          <label>
-            Email
-            <input
-              type="email"
-              placeholder="Enter email"
-              name="email"
-              value={email}
-              onChange={this.handleChange}
-            />
-          </label>
-          <label>
-            Pass
-            <input
-              type="password"
-              placeholder="Enter password"
-              name="password"
-              value={pass}
-              onChange={this.handleChange}
-            />
-          </label>
+      <form className={styles.form} onSubmit={this.handleSubmit}>
+        <label className={styles.lableName}>Name</label>
+        <input
+          className={styles.dataInput}
+          type="text"
+          id="name"
+          placeholder="Enter login"
+          name="login"
+          value={login}
+          onChange={this.handleChange}
+        />
 
-          <label>
-            phone
-            <input
-              type="password"
-              placeholder="Enter password"
-              name="password"
-              value={phone}
-              onChange={this.handleChange}
-            />
-          </label>
+        <label className={styles.lableName}>Email</label>
+        <input
+          className={styles.dataInput}
+          type="email"
+          id="Email"
+          placeholder="Enter email"
+          name="email"
+          value={email}
+          onChange={this.handleChange}
+        />
 
-          <button type="submit">Sign up as {login}</button>
-        </form>
+        <label className={styles.lableName}>Pass</label>
+        <input
+          className={styles.dataInput}
+          type="password"
+          id="pass"
+          placeholder="Enter password"
+          name="password"
+          value={pass}
+          onChange={this.handleChange}
+        />
+
+        <label className={styles.lableName}>Phone</label>
+        <input
+          className={styles.dataInput}
+          type="password"
+          id="phone"
+          placeholder="Enter password"
+          name="password"
+          value={phone}
+          onChange={this.handleChange}
+        />
+
+        <button className={submitBtm} type="submit">
+          Sign up as {login}
+        </button>
       </form>
     );
   }
