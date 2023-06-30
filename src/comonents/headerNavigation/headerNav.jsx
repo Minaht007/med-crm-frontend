@@ -1,29 +1,21 @@
-import { Component } from "react";
 import style from "./headerNav.module.scss";
+import { useState } from "react";
 
-class HeaderNav extends Component {
-  render() {
+export const HeaderNav = ({ items }) => {
+  const [activeIndex, setactivIndex] = useState(0);
+
+  const element = items.map(({ id, link }, index) => {
     return (
-      <>
-        <ul className={style.navTitle}>
-          <li className={style.navList}>
-            <a className={style.navLink} href="/">
-              Записатися
-            </a>
-          </li>
-          <li className={style.navList}>
-            <a href="/about">Лікарі</a>
-          </li>
-          <li className={style.navList}>
-            <a href="/contact">Таріфи</a>
-          </li>
-          <li className={style.navList}>
-            <a href="/contact">Таріфи</a>
-          </li>
-        </ul>
-      </>
+      <li className={style.item} key={id}>
+        <a
+          onClick={() => setactivIndex(index)}
+          href={link}
+          className={style.link}
+        >
+          {items[index].name}
+        </a>
+      </li>
     );
-  }
-}
-
-export default HeaderNav;
+  });
+  return <ul>{element}</ul>;
+};

@@ -1,6 +1,6 @@
 import style from "./mainPage.module.scss";
 import * as IMG from "../../images/logo.jpg";
-import HeaderNav from "../../comonents/headerNavigation/headerNav";
+// import HeaderNav from "../../comonents/headerNavigation/headerNav";
 
 const Header = () => {
   return (
@@ -14,7 +14,6 @@ const Header = () => {
             width={200}
           />
         </a>
-        <HeaderNav />
       </div>
     </div>
   );

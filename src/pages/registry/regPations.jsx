@@ -1,7 +1,5 @@
-// const {state, useState} from "react"
-
 import { Component } from "react";
-import regForm from "./regForm";
+import RegForm from "./regForm";
 
 class Regisry extends Component() {
   render() {
@@ -9,7 +7,7 @@ class Regisry extends Component() {
       <div>
         <h2>Заповніть поля</h2>
         console.log("Hello")
-        <regForm />
+        <RegForm />
       </div>
     );
   }

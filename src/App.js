@@ -1,12 +1,12 @@
 import "./App.css";
 import Header from "./pages/index";
-import Regisry from "./pages/registry/regPations.jsx";
+import SignUpForm from "./pages/registry/SignUpForm.jsx";
 
 function App() {
   return (
     <>
       <Header />
-      <Regisry />
+      <SignUpForm />
     </>
   );
 }
