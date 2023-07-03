@@ -1,6 +1,7 @@
 @import "../../Style/common";
 @media screen and (min-width: 300px) {
   .container {
+    justify-content: flex-start;
     width: 100;
   }
   .form {
@@ -77,6 +78,7 @@
     padding-bottom: 4px;
   }
   .dataInput {
+    justify-content: flex-start;
     height: 40px;
     width: 80%;
     border-radius: 6px;

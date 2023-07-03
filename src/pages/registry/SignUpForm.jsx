@@ -75,7 +75,7 @@ class SignUpForm extends Component {
           onChange={this.handleChange}
         />
 
-        <button className={submitBtm} type="submit">
+        <button className={styles.submitBtm} type="submit">
           Sign up as {login}
         </button>
       </form>

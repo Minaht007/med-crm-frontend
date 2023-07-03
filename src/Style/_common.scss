@@ -1,4 +1,6 @@
 .container {
+  display: flex;
+  justify-content: flex-start;
   max-width: 1600 px;
   padding-left: 30px;
   padding-right: 30px;
