@@ -10,7 +10,7 @@ const INITIAL_STATE = {
 };
 
 class PationForm extends Component {
-  state = INITIAL_STATE;
+  state = { INITIAL_STATE };
 
   handleChange = ({ target }) => {
     const { name, value } = target;
@@ -29,10 +29,15 @@ class PationForm extends Component {
   }
   render() {
     const { doctor } = this.state;
+    console.log(doctor);
     return (
-      <Select>
-        <input name="doctor" as="select" />
-      </Select>
+      <div>
+        <Select>
+          <input value={doctor} onChange={this.handleChange} as="select" />
+        </Select>
+
+        <input type="text" placeholder={name} />
+      </div>
     );
   }
 }
