@@ -1,4 +1,4 @@
-import { Component } from "react";
+import React, { useState, useEffect } from "react";
 import Select from "react-select";
 
 const INITIAL_STATE = {
@@ -9,36 +9,36 @@ const INITIAL_STATE = {
   doctor: ["name", "secondName"],
 };
 
-class PationForm extends Component {
-  state = { INITIAL_STATE };
+const PationForm = () => {
+  const [state, setState] = useState(INITIAL_STATE);
 
-  handleChange = ({ target }) => {
+  const handleChange = ({ target }) => {
     const { name, value } = target;
-    this.setState({ [name]: value });
+    setState((prevState) => ({ ...prevState, [name]: value }));
   };
 
-  componentDidMount() {
+  useEffect(() => {
     fetch("https://med-crm-backend.onrender.com/doctor")
       .then((response) => response.json())
       .then((data) => {
-        this.setState({ doctor: data });
+        setState((prevState) => ({ ...prevState, doctor: data }));
       })
       .catch((error) => {
         console.error("Error data doctor base", error);
       });
-  }
-  render() {
-    const { doctor } = this.state;
-    const { name, value } = this.state;
-    console.log(doctor);
-    return (
-      <div>
-        <Select value={doctor} onChange={this.handleChange} as="select" />
+  }, []);
 
-        <input type="text" placeholder="full name" name="name" value={name} />
-      </div>
-    );
-  }
-}
+  const { doctor, name } = state;
+
+  console.log(doctor);
+
+  return (
+    <div>
+      <Select options={doctor} onChange={handleChange} />
+
+      <input type="text" placeholder="full name" name="name" value={name} />
+    </div>
+  );
+};
 
 export default PationForm;
