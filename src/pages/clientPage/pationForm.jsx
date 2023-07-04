@@ -1,12 +1,15 @@
 import React, { useState, useEffect } from "react";
 import Select from "react-select";
+import axios from "axios";
+
+const backendURL = "https://med-crm-backend.onrender.com";
 
 const INITIAL_STATE = {
   name: "",
   dateOfBirthday: "",
   phone: "",
   email: "",
-  doctor: ["name", "secondName"],
+  doctor: [],
 };
 
 const PationForm = () => {
@@ -18,13 +21,14 @@ const PationForm = () => {
   };
 
   useEffect(() => {
-    fetch("https://med-crm-backend.onrender.com/doctor")
-      .then((response) => response.json())
-      .then((data) => {
+    axios
+      .get(`${backendURL}/api/doctor`)
+      .then((response) => {
+        const data = response.data;
         setState((prevState) => ({ ...prevState, doctor: data }));
       })
       .catch((error) => {
-        console.error("Error data doctor base", error);
+        console.error("Error fetching doctor data", error);
       });
   }, []);
 
@@ -36,7 +40,13 @@ const PationForm = () => {
     <div>
       <Select options={doctor} onChange={handleChange} />
 
-      <input type="text" placeholder="full name" name="name" value={name} />
+      <input
+        type="text"
+        placeholder="full name"
+        name="name"
+        value={name}
+        onChange={handleChange}
+      />
     </div>
   );
 };
