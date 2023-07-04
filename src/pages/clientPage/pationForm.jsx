@@ -18,7 +18,7 @@ class PationForm extends Component {
   };
 
   componentDidMount() {
-    fetch("http://localhost:3090/api/doctor")
+    fetch("https://med-crm-backend.onrender.com/doctor")
       .then((response) => response.json())
       .then((data) => {
         this.setState({ doctor: data });
@@ -29,14 +29,13 @@ class PationForm extends Component {
   }
   render() {
     const { doctor } = this.state;
+    const { name, value } = this.state;
     console.log(doctor);
     return (
       <div>
-        <Select>
-          <input value={doctor} onChange={this.handleChange} as="select" />
-        </Select>
+        <Select value={doctor} onChange={this.handleChange} as="select" />
 
-        <input type="text" placeholder={name} />
+        <input type="text" placeholder="full name" name="name" value={name} />
       </div>
     );
   }
