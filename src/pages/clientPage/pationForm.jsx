@@ -26,6 +26,7 @@ const PationForm = () => {
       .then((response) => {
         const data = response.data;
         setState((prevState) => ({ ...prevState, doctor: data }));
+        console.log(setState(data));
       })
       .catch((error) => {
         console.error("Error fetching doctor data", error);
