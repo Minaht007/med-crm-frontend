@@ -14,19 +14,19 @@ const INITIAL_STATE = {
 
 const PationForm = () => {
   const [state, setState] = useState(INITIAL_STATE);
-
-  const handleChange = ({ target }) => {
-    const { name, value } = target;
-    setState((prevState) => ({ ...prevState, [name]: value }));
-  };
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     axios
       .get(`${backendURL}/api/doctor`)
       .then((response) => {
-        const data = response.data;
-        setState((prevState) => ({ ...prevState, doctor: data }));
-        console.log(setState(data));
+        if (response.status === 200) {
+          const data = response.data;
+          setState((prevState) => ({ ...prevState, doctor: data }));
+          setLoading(false);
+        } else {
+          throw new Error("Unexpected response status: " + response.status);
+        }
       })
       .catch((error) => {
         console.error("Error fetching doctor data", error);
@@ -35,19 +35,15 @@ const PationForm = () => {
 
   const { doctor, name } = state;
 
-  console.log(doctor);
+  if (loading) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <div>
-      <Select options={doctor} onChange={handleChange} />
+      <Select options={doctor} />
 
-      <input
-        type="text"
-        placeholder="full name"
-        name="name"
-        value={name}
-        onChange={handleChange}
-      />
+      <input type="text" placeholder="Full name" name="name" value={name} />
     </div>
   );
 };
