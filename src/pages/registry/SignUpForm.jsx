@@ -32,7 +32,9 @@ const SignUpForm = ({ onSubmit }) => {
     console.log(
       `Login: ${login}, Email: ${email}, Password: ${pass}, Phone: ${phone}`
     );
-    onSubmit({ ...formData });
+    if (typeof onSubmit === "function") {
+      onSubmit({ ...formData });
+    }
     reset();
   };
 
