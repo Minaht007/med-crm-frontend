@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import Select from "react-select";
 import axios from "axios";
 
-const backendURL = "https://med-crm-backend.onrender.com";
+const backendURL = "http://localhost:3090";
+console.log(backendURL);
 
 const INITIAL_STATE = {
   name: "",
@@ -15,6 +16,10 @@ const INITIAL_STATE = {
 const PationForm = () => {
   const [state, setState] = useState(INITIAL_STATE);
   const [loading, setLoading] = useState(true);
+
+  const handleSelectChange = (selectedOption) => {
+    setState((prevState) => ({ ...prevState, name: selectedOption.label }));
+  };
 
   useEffect(() => {
     axios
@@ -41,9 +46,16 @@ const PationForm = () => {
 
   return (
     <div>
-      <Select options={doctor} />
+      <Select
+        options={doctor.map((doc) => ({
+          label: `${doc.name} ${doc.secondName}`,
+          value: doc.id,
+        }))}
+        value={name}
+        onChange={handleSelectChange}
+      />
 
-      <input type="text" placeholder="Full name" name="name" value={name} />
+      <input type="text" placeholder="doctor's name" name="name" value={name} />
     </div>
   );
 };
