@@ -1,24 +1,31 @@
 import React, { useState, useEffect } from "react";
 import Select from "react-select";
 import axios from "axios";
+import PationForm from "../clientPage/clientPage.jsx";
 
 const backendURL = "http://localhost:3090";
 console.log(backendURL);
 
 const INITIAL_STATE = {
-  name: "",
   dateOfBirthday: "",
   phone: "",
   email: "",
-  doctor: [],
+  selectedDoctor: null,
+  selectedDoctors: [],
 };
 
-const PationForm = () => {
+const PationSelectDoctors = () => {
   const [state, setState] = useState(INITIAL_STATE);
   const [loading, setLoading] = useState(true);
+  const [showForm, setShowForm] = useState(false);
 
   const handleSelectChange = (selectedOption) => {
-    setState((prevState) => ({ ...prevState, name: selectedOption.label }));
+    setState((prevState) => ({
+      ...prevState,
+      selectedDoctor: selectedOption,
+      selectedDoctors: [...prevState.selectedDoctors, selectedOption],
+    }));
+    setShowForm(true);
   };
 
   useEffect(() => {
@@ -38,7 +45,7 @@ const PationForm = () => {
       });
   }, []);
 
-  const { doctor, name } = state;
+  const { doctor, selectedDoctor, selectedDoctors } = state;
 
   if (loading) {
     return <div>Loading...</div>;
@@ -48,16 +55,26 @@ const PationForm = () => {
     <div>
       <Select
         options={doctor.map((doc) => ({
-          label: `${doc.name} ${doc.secondName}`,
+          label: `${doc.name} ${doc.secondName} - ${doc.speciality}`,
           value: doc.id,
+          doctor: doc,
         }))}
-        value={name}
+        value={selectedDoctor}
         onChange={handleSelectChange}
       />
 
-      <input type="text" placeholder="doctor's name" name="name" value={name} />
+      {selectedDoctors.length > 0 && (
+        <div>
+          Selected Doctors:
+          {selectedDoctors.map((doc) => (
+            <div key={doc.value}>{doc.label}</div>
+          ))}
+        </div>
+      )}
+
+      {showForm && <PationForm />}
     </div>
   );
 };
 
-export default PationForm;
+export default PationSelectDoctors;
