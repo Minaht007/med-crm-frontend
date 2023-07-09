@@ -1,14 +1,14 @@
 import "./App.css";
 import Header from "./pages/index";
-import SignUpForm from "./pages/registry/SignUpForm.jsx";
-import PationSelectDoctors from "./pages/clientPage/pationSelectDoctors.jsx";
+import { BrowserRouter } from "react-router-dom";
 
 function App() {
   return (
     <>
-      <Header />
-      <SignUpForm />
-      <PationSelectDoctors />
+      <BrowserRouter>
+        <Header />;
+      </BrowserRouter>
+      ;
     </>
   );
 }

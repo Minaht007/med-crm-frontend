@@ -10,22 +10,19 @@ const INITIAL_STATE = {
   dateOfBirthday: "",
   phone: "",
   email: "",
-  selectedDoctor: null,
   selectedDoctors: [],
 };
 
 const PationSelectDoctors = () => {
   const [state, setState] = useState(INITIAL_STATE);
   const [loading, setLoading] = useState(true);
-  const [showForm, setShowForm] = useState(false);
+  const [options, setOptions] = useState([]);
 
-  const handleSelectChange = (selectedOption) => {
+  const handleSelectChange = (selectedOptions) => {
     setState((prevState) => ({
       ...prevState,
-      selectedDoctor: selectedOption,
-      selectedDoctors: [...prevState.selectedDoctors, selectedOption],
+      selectedDoctors: selectedOptions,
     }));
-    setShowForm(true);
   };
 
   useEffect(() => {
@@ -34,7 +31,13 @@ const PationSelectDoctors = () => {
       .then((response) => {
         if (response.status === 200) {
           const data = response.data;
-          setState((prevState) => ({ ...prevState, doctor: data }));
+          setOptions(
+            data.map((doc) => ({
+              label: `${doc.name} ${doc.secondName} - ${doc.speciality}`,
+              value: doc.id,
+              doctor: doc,
+            }))
+          );
           setLoading(false);
         } else {
           throw new Error("Unexpected response status: " + response.status);
@@ -45,7 +48,7 @@ const PationSelectDoctors = () => {
       });
   }, []);
 
-  const { doctor, selectedDoctor, selectedDoctors } = state;
+  const { selectedDoctors } = state;
 
   if (loading) {
     return <div>Loading...</div>;
@@ -54,25 +57,16 @@ const PationSelectDoctors = () => {
   return (
     <div>
       <Select
-        options={doctor.map((doc) => ({
-          label: `${doc.name} ${doc.secondName} - ${doc.speciality}`,
-          value: doc.id,
-          doctor: doc,
-        }))}
-        value={selectedDoctor}
+        options={options.filter(
+          (option) =>
+            !selectedDoctors.find((doctor) => doctor.value === option.value)
+        )}
+        value={selectedDoctors}
         onChange={handleSelectChange}
+        isMulti
       />
 
-      {selectedDoctors.length > 0 && (
-        <div>
-          Selected Doctors:
-          {selectedDoctors.map((doc) => (
-            <div key={doc.value}>{doc.label}</div>
-          ))}
-        </div>
-      )}
-
-      {showForm && <PationForm />}
+      <PationForm />
     </div>
   );
 };
