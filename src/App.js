@@ -9,9 +9,9 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
-          <Route exact path="/" component={MainPage} />
-          <Route path="/SignUpForm" component={SignUpForm} />
-          <Route path="/clientPage" component={ClientPage} />
+          <Route path="/" component={<MainPage />} />
+          <Route path="/SignUpForm" component={<SignUpForm />} />
+          <Route path="/clientPage" component={<ClientPage />} />
         </Routes>
       </BrowserRouter>
     </>

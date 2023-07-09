@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Select from "react-select";
 import axios from "axios";
 import PationForm from "../clientPage/clientPage.jsx";
+import { Outlet } from "react-router-dom";
 
 const backendURL = "http://localhost:3090";
 console.log(backendURL);
@@ -17,14 +18,13 @@ const PationSelectDoctors = () => {
   const [state, setState] = useState(INITIAL_STATE);
   const [loading, setLoading] = useState(true);
   const [options, setOptions] = useState([]);
-  const [showPationForm, setShowPationForm] = useState(false); // Добавлено состояние для отображения PationForm
-
+  const [showPationForm, setShowPationForm] = useState(false);
   const handleSelectChange = (selectedOptions) => {
     setState((prevState) => ({
       ...prevState,
       selectedDoctors: selectedOptions,
     }));
-    setShowPationForm(selectedOptions.length > 0); // Показывать PationForm, если выбрано хотя бы одно значение
+    setShowPationForm(selectedOptions.length > 0);
   };
 
   useEffect(() => {
@@ -67,8 +67,8 @@ const PationSelectDoctors = () => {
         onChange={handleSelectChange}
         isMulti
       />
+      <Outlet />
       {showPationForm && <PationForm />}{" "}
-      {/* Отображать PationForm при выборе в поле Select */}
     </div>
   );
 };
