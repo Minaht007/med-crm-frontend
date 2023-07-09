@@ -17,12 +17,14 @@ const PationSelectDoctors = () => {
   const [state, setState] = useState(INITIAL_STATE);
   const [loading, setLoading] = useState(true);
   const [options, setOptions] = useState([]);
+  const [showPationForm, setShowPationForm] = useState(false); // Добавлено состояние для отображения PationForm
 
   const handleSelectChange = (selectedOptions) => {
     setState((prevState) => ({
       ...prevState,
       selectedDoctors: selectedOptions,
     }));
+    setShowPationForm(selectedOptions.length > 0); // Показывать PationForm, если выбрано хотя бы одно значение
   };
 
   useEffect(() => {
@@ -65,8 +67,8 @@ const PationSelectDoctors = () => {
         onChange={handleSelectChange}
         isMulti
       />
-
-      <PationForm />
+      {showPationForm && <PationForm />}{" "}
+      {/* Отображать PationForm при выборе в поле Select */}
     </div>
   );
 };
