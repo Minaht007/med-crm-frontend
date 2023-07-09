@@ -19,12 +19,14 @@ const MainPage = () => {
         </div>
       </div>
 
-      <Link to="/SignUpForm">
+      <Link to="/clientPage ">
         <button type="button">If you need help</button>
       </Link>
 
-      <Link to="/clientPage">
-        <button type="button">If you can help doctors and admins</button>
+      <Link to="/SignUpForm">
+        <button type="button">
+          If you can help <br /> doctors and admins
+        </button>
       </Link>
 
       <Outlet />
