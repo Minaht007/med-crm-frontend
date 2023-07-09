@@ -1,14 +1,17 @@
 import "./App.css";
-import Header from "./pages/index";
-import { BrowserRouter } from "react-router-dom";
+import MainPage from "./pages/main/mainPage.jsx";
+import { BrowserRouter, Router, Route, Switch } from "react-router-dom";
+import SignUpForm from "./pages/registry/SignUpForm.jsx";
+import ClientPage from "./pages/clientPage/clientPage.jsx";
 
 function App() {
   return (
     <>
-      <BrowserRouter>
-        <Header />;
-      </BrowserRouter>
-      ;
+      <Switch>
+        <Route exact path="/" component={MainPage} />
+        <Route path="/SignUpForm" component={SignUpForm} />
+        <Route path="/clientPage" component={ClientPage} />
+      </Switch>
     </>
   );
 }
