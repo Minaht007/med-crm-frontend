@@ -9,7 +9,7 @@ const Footer = () => {
   };
 
   const navigateHome = () => {
-    navigate("/pages/main/mainPage.jsx");
+    navigate("/");
   };
 
   return (
