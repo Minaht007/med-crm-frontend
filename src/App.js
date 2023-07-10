@@ -8,7 +8,7 @@ import Footer from "./comonents/footer/footer.jsx";
 
 function App() {
   return (
-    <div>
+    <div className="app-container">
       <BrowserRouter>
         <Header />
         <Routes>
