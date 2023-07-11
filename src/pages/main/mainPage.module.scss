@@ -1,0 +1,70 @@
+@import "../../Style/main.scss";
+
+@media screen and (min-width: 300px) and (max-width: 767px) {
+  .container {
+    width: 100%;
+  }
+  .linkContainer {
+    display: flex;
+    height: 70vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .linkButton {
+    width: fit-content;
+    height: 40px;
+    border-radius: 12px;
+
+    &:not(last-child) {
+      margin-bottom: 30px;
+    }
+  }
+
+  .textButton {
+    text-align: center;
+  }
+}
+// Tablet
+@media screen and (min-width: 768px) {
+  .container {
+    width: 100%;
+  }
+  .linkContainer {
+    display: flex;
+    height: 70vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(215, 245, 181);
+  }
+  .linkButton {
+    width: fit-content;
+    min-width: 20vw;
+    height: fit-content;
+    min-height: 2vw;
+    border-radius: 12px;
+    // padding-top: 15px;
+    // padding-bottom: 15px;
+    padding: 15px 30px;
+
+    &:not(last-child) {
+      margin-bottom: 30px;
+    }
+  }
+
+  .textButton {
+    font-family: Roboto;
+    font-size: 54px;
+    font-weight: bold;
+    line-height: 1.5;
+    text-align: center;
+  }
+  .textButtonAdd {
+    font-family: Roboto;
+    font-weight: normal;
+    font-size: 34px;
+    line-height: 1.5;
+    text-align: center;
+  }
+}
