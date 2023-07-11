@@ -1,0 +1,43 @@
+@import "../../Style/main.scss";
+
+@media screen and (min-width: 300px) and (max-width: 767px) {
+  .footerContainer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 15vh;
+    background-color: rgb(230, 219, 251);
+  }
+  .buttonFoot {
+    width: fit-content;
+    height: fit-content;
+    padding: 10px 12px;
+    border: 1px solid red;
+    border-radius: 8px;
+    background-color: rgb(218, 234, 248);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .footerContainer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 15vh;
+    background-color: rgb(230, 219, 251);
+  }
+  .buttonFoot {
+    width: fit-content;
+    min-width: 5vw;
+    height: fit-content;
+    min-height: 2vw;
+    padding: 20px 40px;
+    border: 1px solid red;
+    border-radius: 18px;
+    background-color: rgb(218, 234, 248);
+
+    font-family: "Roboto";
+    font-weight: 400;
+    font-size: 44px;
+  }
+}

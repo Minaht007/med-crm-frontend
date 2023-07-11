@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import Style from "./footer.module.scss";
 
 const Footer = () => {
   const navigate = useNavigate();
@@ -13,9 +14,13 @@ const Footer = () => {
   };
 
   return (
-    <div>
-      <button onClick={navigateBack}>Go Back</button>
-      <button onClick={navigateHome}>Go Home</button>
+    <div className={Style.footerContainer}>
+      <button className={Style.buttonFoot} onClick={navigateBack}>
+        Go Back
+      </button>
+      <button className={Style.buttonFoot} onClick={navigateHome}>
+        Go Home
+      </button>
     </div>
   );
 };
