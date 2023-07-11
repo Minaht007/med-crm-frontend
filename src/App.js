@@ -1,7 +1,8 @@
 import "./App.css";
+import { Routes, Route, BrowserRouter } from "react-router-dom";
 import Header from "./comonents/Header/header.jsx";
 import MainPage from "./pages/main/mainPage.jsx";
-import { Routes, Route, BrowserRouter } from "react-router-dom";
+
 import SignUpForm from "./pages/registry/SignUpForm.jsx";
 import ClientPage from "./pages/clientPage/pationSelectDoctors.jsx";
 import Footer from "./comonents/footer/footer.jsx";
