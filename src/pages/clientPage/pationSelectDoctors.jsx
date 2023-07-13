@@ -3,6 +3,7 @@ import Select from "react-select";
 import axios from "axios";
 import PationForm from "../clientPage/clientPage.jsx";
 import { Outlet } from "react-router-dom";
+import Style from "./clientPage.module.scss";
 
 const backendURL = "http://localhost:3090";
 console.log(backendURL);
@@ -57,8 +58,9 @@ const PationSelectDoctors = () => {
   }
 
   return (
-    <div>
+    <div className={Style.selectContainer}>
       <Select
+        className={Style.selectData}
         options={options.filter(
           (option) =>
             !selectedDoctors.find((doctor) => doctor.value === option.value)

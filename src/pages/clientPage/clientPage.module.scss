@@ -1,1 +1,18 @@
 @import "../../Style/main.scss";
+
+@media screen and (min-width: 320px) and (max-widt: 767px) {
+  .container {
+    width: 100%;
+  }
+  .selectContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+  .selectData {
+    width: 80vw;
+    height: 20%;
+  }
+}
