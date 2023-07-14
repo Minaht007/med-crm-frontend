@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import style from "./clientPage.module.scss";
 
-const BackendURL = "http://localhost:3090";
+const BackendURL = "https://med-crm-backend.onrender.com";
 
 const PationForm = () => {
   const [name, setName] = useState("");
@@ -40,6 +40,7 @@ const PationForm = () => {
       dateOfBirth: dateOfBirth,
       email: email,
       phone: phone,
+      location: location,
     };
     axios
       .post(`${BackendURL}/api/client`, data)
