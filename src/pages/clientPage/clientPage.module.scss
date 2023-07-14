@@ -10,16 +10,38 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    margin-top: 30px;
-    margin-bottom: 30px;
+    height: 70vh;
+    background: linear-gradient(
+      to bottom,
+      rgb(176, 204, 245) 15%,
+      rgb(143, 251, 162)
+    );
   }
   .selectData {
     width: 80vw;
     height: 20%;
+    margin-bottom: 15px;
   }
   .inputBlock {
     display: flex;
     flex-direction: column;
+  }
+  .inputLine {
+    width: 80vw;
+    height: 5vh;
+    border-radius: 4px;
+  }
+  .inputLine:not(last-child) {
+    margin-bottom: 12px;
+  }
+  .inputBtn {
+    width: 40vw;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 8px 12px;
+  }
+  .inputBtn:not(last-child) {
+    margin-bottom: 8px;
   }
 }
 

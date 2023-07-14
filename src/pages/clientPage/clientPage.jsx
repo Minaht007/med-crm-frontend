@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import style from "./clientPage.module.scss";
 
 const BackendURL = "http://localhost:3090";
 
@@ -54,8 +55,9 @@ const PationForm = () => {
   };
 
   return (
-    <div>
+    <div className={style.inputBlock}>
       <input
+        className={style.inputLine}
         type="text"
         placeholder="Name"
         name="name"
@@ -64,6 +66,7 @@ const PationForm = () => {
       />
 
       <input
+        className={style.inputLine}
         type="date"
         placeholder="Date of Birth"
         name="dateOfBirth"
@@ -72,6 +75,7 @@ const PationForm = () => {
       />
 
       <input
+        className={style.inputLine}
         type="email"
         placeholder="Email"
         name="email"
@@ -80,6 +84,7 @@ const PationForm = () => {
       />
 
       <input
+        className={style.inputLine}
         type="tel"
         placeholder="Phone"
         name="phone"
@@ -87,8 +92,12 @@ const PationForm = () => {
         onChange={handleChange}
       />
 
-      <button onClick={sendData}>Send</button>
-      <button onClick={cleanForm}>Clean</button>
+      <button className={style.inputBtn} onClick={sendData}>
+        Send
+      </button>
+      <button className={style.inputBtn} onClick={cleanForm}>
+        Clean
+      </button>
     </div>
   );
 };
