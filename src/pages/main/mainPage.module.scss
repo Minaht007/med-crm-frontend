@@ -68,7 +68,7 @@
   }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 768px) and (max-width: 1199px) {
   .container {
     width: 100%;
   }
@@ -95,6 +95,124 @@
   .textButton {
     font-family: Roboto;
     font-size: 50px;
+    font-weight: bold;
+    line-height: 1.5;
+    text-align: center;
+  }
+  .textButtonAdd {
+    font-family: Roboto;
+    font-weight: normal;
+    font-size: 26px;
+    line-height: 1.5;
+    text-align: center;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1599px) {
+  .container {
+    width: 100%;
+  }
+  .linkContainer {
+    display: flex;
+    height: 70vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(215, 245, 181);
+  }
+  .linkButton {
+    width: fit-content;
+    min-width: 20vw;
+    height: fit-content;
+    min-height: 2vw;
+    border-radius: 12px;
+    padding: 15px 30px;
+
+    &:not(last-child) {
+      margin-bottom: 30px;
+    }
+  }
+
+  @keyframes animation {
+    0% {
+      scale: 1;
+    }
+    30% {
+      scale: 1.1;
+    }
+    70% {
+      scale: 1/25;
+    }
+    100% {
+      scale: 1;
+    }
+  }
+  .linkButton:hover {
+    animation-name: animation;
+  }
+
+  .textButton {
+    font-family: Roboto;
+    font-size: 36px;
+    font-weight: bold;
+    line-height: 1.5;
+    text-align: center;
+  }
+  .textButtonAdd {
+    font-family: Roboto;
+    font-weight: normal;
+    font-size: 26px;
+    line-height: 1.5;
+    text-align: center;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .container {
+    width: 100%;
+  }
+  .linkContainer {
+    display: flex;
+    height: 70vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(215, 245, 181);
+  }
+  .linkButton {
+    width: fit-content;
+    // min-width: 20vw;
+    height: fit-content;
+    // min-height: 2vw;
+    border-radius: 12px;
+    padding: 15px 30px;
+
+    &:not(last-child) {
+      margin-bottom: 30px;
+    }
+  }
+
+  @keyframes animation {
+    0% {
+      scale: 1;
+    }
+    30% {
+      scale: 1.1;
+    }
+    70% {
+      scale: 1/25;
+    }
+    100% {
+      scale: 1;
+    }
+  }
+  .linkButton:hover {
+    animation-name: animation;
+  }
+
+  .textButton {
+    font-family: Roboto;
+    font-size: 36px;
     font-weight: bold;
     line-height: 1.5;
     text-align: center;

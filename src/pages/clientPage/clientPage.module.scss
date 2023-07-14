@@ -16,3 +16,21 @@
     height: 20%;
   }
 }
+
+@media screen and (min-width: 768px) and (max-widt: 1199px) {
+  .container {
+    width: 100%;
+  }
+  .selectContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    width: 60vw;
+  }
+  .selectData {
+    width: 80vw;
+    height: 20%;
+  }
+}
