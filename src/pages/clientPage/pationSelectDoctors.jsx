@@ -5,7 +5,7 @@ import PationForm from "../clientPage/clientPage.jsx";
 import { Outlet } from "react-router-dom";
 import style from "./clientPage.module.scss";
 
-const backendURL = "http://localhost:3090";
+const backendURL = "https://med-crm-backend.onrender.com";
 console.log(backendURL);
 
 const INITIAL_STATE = {

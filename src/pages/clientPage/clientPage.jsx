@@ -9,6 +9,7 @@ const PationForm = () => {
   const [dateOfBirth, setDateOfBirth] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
+  const [location, setLocation] = useState("");
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -24,6 +25,9 @@ const PationForm = () => {
         break;
       case "phone":
         setPhone(value);
+        break;
+      case "location":
+        setLocation(value);
         break;
       default:
         break;
@@ -91,13 +95,22 @@ const PationForm = () => {
         value={phone}
         onChange={handleChange}
       />
-
-      <button className={style.inputBtn} onClick={sendData}>
-        Send
-      </button>
-      <button className={style.inputBtn} onClick={cleanForm}>
-        Clean
-      </button>
+      <input
+        className={style.inputLine}
+        type="location"
+        placeholder="location"
+        name="location"
+        value={location}
+        onChange={handleChange}
+      />
+      <div className={style.btContainer}>
+        <button className={style.inputBtn} onClick={sendData}>
+          Send
+        </button>
+        <button className={style.inputBtn} onClick={cleanForm}>
+          Clean
+        </button>
+      </div>
     </div>
   );
 };
