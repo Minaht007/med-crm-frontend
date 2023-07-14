@@ -10,6 +10,7 @@ const PationForm = () => {
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [location, setLocation] = useState("");
+  const [notification, setNotification] = useState("");
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -46,9 +47,11 @@ const PationForm = () => {
       .post(`${BackendURL}/api/client`, data)
       .then((response) => {
         console.log("Data sent successfully!", response);
+        setNotification("Data sent successfully!");
       })
       .catch((error) => {
         console.error("Error sending data:", error);
+        setNotification("Error sending data");
       });
   };
 
@@ -61,6 +64,7 @@ const PationForm = () => {
 
   return (
     <div className={style.inputBlock}>
+      {notification && <div className={style.notification}>{notification}</div>}
       <input
         className={style.inputLine}
         type="text"
