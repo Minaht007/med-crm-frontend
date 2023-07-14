@@ -1,12 +1,37 @@
 @import "../../Style/main.scss";
 
-@media screen and (min-width: 320px) and (max-widt: 767px) {
+@media screen and (min-width: 320px) and (max-width: 767px) {
   .container {
     width: 100%;
   }
   .selectContainer {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+  .selectData {
+    width: 80vw;
+    height: 20%;
+  }
+  .inputBlock {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  .container {
+    width: 100%;
+  }
+  .selectContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     margin-top: 30px;
     margin-bottom: 30px;
@@ -17,17 +42,18 @@
   }
 }
 
-@media screen and (min-width: 768px) and (max-widt: 1199px) {
+@media screen and (min-width: 1200px) {
   .container {
     width: 100%;
   }
   .selectContainer {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     margin-top: 30px;
     margin-bottom: 30px;
-    width: 60vw;
   }
   .selectData {
     width: 80vw;
