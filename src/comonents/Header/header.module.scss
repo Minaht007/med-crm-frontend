@@ -5,8 +5,12 @@
   justify-content: center;
   align-items: center;
   text-decoration: none;
-  background-color: rgb(173, 211, 244);
   height: 15vh;
+  background: radial-gradient(
+    at center,
+    $header-bg-color-first 30%,
+    $header-bg-color-second
+  );
 }
 
 @media screen and (min-width: 300px) and (max-width: 767px) {
@@ -14,7 +18,7 @@
     display: flex;
     padding: 15px 15px;
     margin: auto;
-    width: 20vh;
+    width: 16vh;
   }
 }
 

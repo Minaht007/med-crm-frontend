@@ -10,7 +10,11 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: rgb(226, 243, 206);
+    background: radial-gradient(
+      at center,
+      $body-bg-color-first 30%,
+      $body-bg-color-second
+    );
   }
   .linkButton {
     width: fit-content;
@@ -37,7 +41,11 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: rgb(215, 245, 181);
+    background: radial-gradient(
+      at center,
+      $header-bg-color-first 30%,
+      $body-bg-color-first
+    );
   }
   .linkButton {
     width: fit-content;
@@ -177,7 +185,11 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: rgb(215, 245, 181);
+    background: radial-gradient(
+      at center,
+      $header-bg-color-first 30%,
+      $body-bg-color-first
+    );
   }
   .linkButton {
     width: fit-content;

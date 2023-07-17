@@ -1,6 +1,6 @@
 import React from "react";
 import style from "./header.module.scss";
-import * as IMG from "../../images/logo.jpg";
+import * as IMG from "../../images/logo-fotor-20230716203442.jpg";
 
 const Header = () => {
   return (
