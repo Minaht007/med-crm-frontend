@@ -2,6 +2,7 @@ import "./App.css";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import Header from "./comonents/Header/header.jsx";
 import MainPage from "./pages/main/mainPage.jsx";
+import DoctoreSchedulle from "./pages/doctorsSchedule/docrorSchedule.jsx";
 
 import SignUpForm from "./pages/registry/SignUpForm.jsx";
 import ClientPage from "./pages/clientPage/pationSelectDoctors.jsx";
@@ -17,6 +18,7 @@ function App() {
           <Route path="/SignUpForm" element={<SignUpForm />} />
           <Route path="/clientPage" element={<ClientPage />} />
         </Routes>
+        <DoctoreSchedulle />
         <Footer />
       </BrowserRouter>
     </div>
