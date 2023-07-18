@@ -1,31 +1,26 @@
 import React from "react";
-import { useState } from "react";
-
-const INITION_STATE = {
-  dayOfWeek: "",
-};
+// import { useState } from "react";
+import moment from "moment";
 
 const DoctoreSchedulle = () => {
-  const { day, setStay } = useState(INITION_STATE);
-  return (
-    <table>
-      <thead>
-        <tr>
-          <th>Day's of week</th>
-        </tr>
-      </thead>
-      <thead>
-        <tr key={day}>time</tr>
-        <tr>Monday</tr>
-        <tr>Thusday</tr>
-        <tr>Wensday</tr>
-        <tr>Thursday</tr>
-        <tr>Friday</tr>
-        <tr>Saturday</tr>
-        <tr>Sunday</tr>
-      </thead>
-    </table>
-  );
+  window.moment = moment;
+  moment.updateLocale("en", { week: { dow: 1 } });
+  const startDay = moment().startOf("month").startOf("week");
+  const endDay = moment().endOf("month").endOf("week");
+
+  console.log(startDay.format("DD.MM.YYYY"));
+  console.log(endDay.format("DD.MM.YYYY"));
+
+  const calendar = [];
+  console.log(calendar);
+  const day = startDay;
+
+  while (!day.isSame(endDay)) {
+    calendar.push(day);
+    day.add(1, "day");
+  }
+
+  return <div></div>;
 };
 
 export default DoctoreSchedulle;
