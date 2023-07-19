@@ -1,0 +1,9 @@
+@import "../../../Style/main.scss";
+.hour {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.minute {
+  font-size: 0.9rem; /* Меньший размер для часов с минутами */
+}
