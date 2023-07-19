@@ -1,26 +1,26 @@
 import React from "react";
-// import { useState } from "react";
-import moment from "moment";
+import WeekDays from "../../comonents/calendar/days/days";
+import TimeSlots from "../../comonents/calendar/times/timeSlots";
+import style from "./doctorSchedule.module.scss";
 
-const DoctoreSchedulle = () => {
-  // window.moment = moment;
-  moment.updateLocale("en", { week: { dow: 1 } });
-  const startDay = moment().startOf("month").startOf("week");
-  const endDay = moment().endOf("month").endOf("week");
-
-  console.log(startDay.format("DD.MM.YYYY"));
-  console.log(endDay.format("DD.MM.YYYY"));
-
-  // const calendar = [];
-  // console.log(calendar);
-  // const day = startDay;
-
-  // while (!day.isSame(endDay)) {
-  //   calendar.push(day);
-  //   day.add(1, "day");
-  // }
-
-  return <div></div>;
+const ScheduleTable = () => {
+  return (
+    <div>
+      <table className={style.table}>
+        <thead>
+          <tr>
+            <th className={style.th}></th>
+            <WeekDays />
+          </tr>
+        </thead>
+        <tbody>
+          <TimeSlots />
+          {/* Время в столбце слева */}
+          {/* Здесь можно добавить строки с данными для каждого временного слота */}
+        </tbody>
+      </table>
+    </div>
+  );
 };
 
-export default DoctoreSchedulle;
+export default ScheduleTable;
